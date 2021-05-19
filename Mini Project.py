@@ -38,6 +38,9 @@ def customer_seg_AI_and_SS():
     plot_graph.xlabel('Annual Income (k$)')
     plot_graph.ylabel('Spending Score (1-100)')
     plot_graph.legend()
+    plot_graph.figtext(1, 0.5,
+                       "Cluster1 : Average Annual Income with Average Spending Score\nCluster2 : Low Annual Income with High Spending Score "
+                       "\nCluster3 : High Annual Income with High Spending Score\nCluster4 : Low Annual Income with Low Spending Score\nCluster5 : High Annual Income with Low Spending Score")
     plot_graph.show()
 
     # Bar Graph Plot
@@ -50,8 +53,8 @@ def customer_seg_AI_and_SS():
     plot_graph.ylabel('Spending Score(1 - 100)')
     plot_graph.legend()
     plot_graph.figtext(1, 0.5,
-                       "Cluster1 : High Annual Income with Low Spending Score\nCluster2 : Average Annual Income with Average Spending Score "
-                       "\nCluster3 : High Annual Income with High Spending Score\nCluster4 : Low Annual Income with High Spending Score\nCluster5 : Low Annual Income with Low Spending Score")
+                       "Cluster1 : Average Annual Income with Average Spending Score\nCluster2 : Low Annual Income with High Spending Score "
+                       "\nCluster3 : High Annual Income with High Spending Score\nCluster4 : Low Annual Income with Low Spending Score\nCluster5 : High Annual Income with Low Spending Score")
     plot_graph.show()
     start()
 
@@ -109,7 +112,7 @@ def customer_seg_Age_and_AI():
 
 def customer_seg_Age_and_SS():
     # Function for Segmentation on the basis of Age and Spending Score
-    train2 = customer_info.iloc[:, [2, 3]]
+    train2 = customer_info.iloc[:, [2, 4]]
     train2 = train2.values
     from sklearn.cluster import KMeans  # Age and SC
     WCSS2 = []  # WCSS = Within Cell Sum of Square
@@ -137,8 +140,8 @@ def customer_seg_Age_and_SS():
     # plot_graph.scatter(kmeans2.cluster_centers_[:, 0], kmeans2.cluster_centers_[:, 1], s=100, c='black', label='Centroids')
     plot_graph.xlabel('Age')
     plot_graph.ylabel('Spending Score(1 - 100)')
-    plot_graph.figtext(1, 0.5, "Cluster1 : Teens to Middle aged with Average Spending Score\nCluster2 : People with High Spending Score"
-                       "\nCluster3 : People with Low Spending Score\nCluster4 : Middle aged to Old aged people with Average Spending Score")
+    plot_graph.figtext(1, 0.5, "Cluster1 : Teens to Middle aged with Average Spending Score\nCluster2 : Teens with High Spending Score"
+                       "\nCluster3 : People with Low Spending Score\nCluster4 : Middle aged to Old aged People with Average Spending Score")
     plot_graph.legend()
     plot_graph.show()
 
@@ -151,8 +154,8 @@ def customer_seg_Age_and_SS():
     plot_graph.ylabel('Spending Score(1 - 100)')
     plot_graph.legend()
     plot_graph.figtext(1, 0.5,
-                       "Cluster1 : Teens to Middle aged with Average Spending Score\nCluster2 : People with High Spending Score "
-                       "\nCluster3 : People with Low Spending Score\nCluster4 : Middle aged to Old aged people with Average Spending Score")
+                       "Cluster1 : Teens to Middle aged with Average Spending Score\nCluster2 : Teens with High Spending Score"
+                       "\nCluster3 : People with Low Spending Score\nCluster4 : Middle aged to Old aged People with Average Spending Score")
     plot_graph.show()
     start()
 
